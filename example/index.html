@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>SVGTag.js</title>
+        <style>
+            button,
+            svg * {
+                transition-duration: 300ms;
+            }
+            button {
+                margin: 10px;
+                padding: 0;
+                width: 120px;
+                transition-property: background-color;
+                cursor: pointer;
+                background: 0;
+                border: 0;
+                border-radius: 60px;
+                outline: 0;
+            }
+            svg {
+                display: block;
+            }
+            svg * {
+                transition-property: fill, stroke;
+                fill: #F55;
+            }
+            button:hover svg * {
+                fill: #AAF;
+            }
+            input#StrokeTheme:checked ~ button svg * {
+                fill: transparent;
+                stroke: #F55;
+                stroke-width: 7px;
+            }
+            input#StrokeTheme:checked ~ button:hover svg * {
+                stroke: #AAF;
+            }
+            input#ReverseTheme:checked ~ button {
+                background-color: #F55;
+            }
+            input#ReverseTheme:checked ~ button svg * {
+                fill: white;
+            }
+            input#ReverseTheme:checked ~ button:hover {
+                background-color: #AAF;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>SVGTag.js</h1>
+
+        <p>
+            <a href="https://github.com/Wildtyto/SVGTag.js" target="_blank">https://github.com/Wildtyto/SVGTag.js</a>
+        </p>
+
+        <input id="NormalTheme" type="radio" name="theme" checked />
+        <label for="NormalTheme">Normal</label>
+
+        <input id="StrokeTheme" type="radio" name="theme" />
+        <label for="StrokeTheme">Stroke</label>
+
+        <input id="ReverseTheme" type="radio" name="theme" />
+        <label for="ReverseTheme">Reverse</label>
+
+        <br />
+
+        <button>
+            <img svg-tag src="asset/icon-create.svg" />
+        </button>
+
+        <button>
+            <object svg-tag data="asset/icon-delete.svg"></object>
+        </button>
+
+        <button>
+            <img id="CloseSVG" src="asset/icon-close.svg" />
+        </button>
+
+        <button>
+            <object id="UploadSVG" data="asset/icon-upload.svg"></object>
+        </button>
+
+    </body>
+
+    <script src="../svgtag.min.js"></script>
+    <script>
+
+        (function (SVGTag) {
+
+            "use strict";
+
+            SVGTag.scan();
+            SVGTag.new(document.getElementById("CloseSVG"));
+            SVGTag.new(document.getElementById("UploadSVG"));
+
+        }(window.SVGTag));  
+
+    </script>
+
+</html>
