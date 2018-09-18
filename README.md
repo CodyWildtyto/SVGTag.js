@@ -5,7 +5,7 @@ A pure JavaScript plugin that be able to insert SVG elements which are modifiabl
 
 ## Usage
 
-### Include SVGTag.js 
+### Include SVGTag.js
 
 Add **svgtag.js** file as ```script``` tag.
 
@@ -85,12 +85,12 @@ An array of SVGTag-elements.
 ```
 _ary = SVGTag.list
 ```
-_return: **\_ary:Array** (include HTMLElements)_ 
+_return: **\_ary:Array** (include HTMLElements)_
 
 
 ## Examples
 
-* [Basic](http://wildtyto.github.io/SVGTag.js/examples/basic.html)
+* [Basic](http://wildtyto.github.io/SVGTag.js/example/)
 
 ## License
 Released under the <a href="http://www.opensource.org/licenses/MIT">MIT license</a>.
